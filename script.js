@@ -58,23 +58,32 @@ var board = document.getElementsByClassName('board')[0]
 var question = document.getElementsByClassName('question')[0] 
 var answersShown = document.getElementsByClassName('answer')
 
-// insert 1 question + answers into board
-var output = ""
+// insert question + answers into board
+var output
 function makeQuestions() {
 
     for (var i = 0; i < questions.length; i++) {
         // create div to hold question
-        var output = document.createElement('div')
-
-        var currentQ = ""
-        currentQ.push(questions[i].question)
+        var container = document.createElement('div')
+        // add class to div
+        container.setAttribute('class', 'triviaQuestion')
+        var currentQ = questions[i].question
+        // add current Question to container
+        container.innerHTML = currentQ
+        // add choices to container
+        for (var a = 0; a < questions[i].answers; i++) {
+            var choice = document.createElement("p")
+            choice.innerHTML = questions[i].answers[a]
+        }
+        // append containers to board
+        board.appendChild(container)
         // create divs to hold answers
         
     }
 }
 
 function results() {
-    
+
 }
 
 makeQuestions()
