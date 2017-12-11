@@ -1,5 +1,5 @@
 console.log("hello world")
-var questions = [
+var arrayQs = [
     {
         question: "1 + 1",
         answers: ["3", "2", "4", "5"],
@@ -61,29 +61,28 @@ var answersShown = document.getElementsByClassName('answer')
 // insert question + answers into board
 var output
 function makeQuestions() {
+    // create div to hold question
+    var container = document.createElement('div')
+    // add class to div
+    container.setAttribute('class', 'triviaQuestion')
 
-    for (var i = 0; i < questions.length; i++) {
-        // create div to hold question
-        var container = document.createElement('div')
-        // add class to div
-        container.setAttribute('class', 'triviaQuestion')
-        var currentQ = questions[i].question
-        // add current Question to container
-        container.innerHTML = currentQ
-        // add choices to container
-        for (var a = 0; a < questions[i].answers; i++) {
-            var choice = document.createElement("p")
-            choice.innerHTML = questions[i].answers[a]
-        }
-        // append containers to board
-        board.appendChild(container)
-        // create divs to hold answers
-        
-    }
+    var currentQ = this.question
+    // add current Question to container
+    container.innerHTML = currentQ
+    // add choices to container
+            // for (var i = 0; i < this.answers; i++) {
+            //     var choice = document.createElement("div")
+            //     choice.innerHTML = this.answers[i]
+            //     container.appendChild(choice)
+            // }
+    // append containers to board
+    board.appendChild(container)
+    // create divs to hold answers
+    
 }
 
 function results() {
 
 }
 
-makeQuestions()
+arrayQs.map(makeQuestions)
