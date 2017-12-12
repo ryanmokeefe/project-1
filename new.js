@@ -70,14 +70,18 @@ function makeQuestions() {
         // add current Question to container
         container.innerHTML = currentQ
         // add choices to container
+        var choicesShown = document.createElement("div")
+        
         for (var x = 0; x < arrayQs[i].answers.length; x++) {
             var choicesShown = document.createElement("div")
             var choiceAndRadio = []
-
+            choiceAndRadio.push('<input type="radio" name="choice" value="Choice">' + arrayQs[i].answers[x])
             // var radio = document.createElement("input")
             // radio.setAttribute("type", "radio")
             // choice.appendChild(radio)
-            choicesShown.innerHTML = arrayQs[i].answers[x]
+            choicesShown.innerHTML += choiceAndRadio
+            
+                 // arrayQs[i].answers[x]
             container.appendChild(choicesShown)
         }
         // append container to board
