@@ -57,7 +57,7 @@ var arrayQs = [
 var board = document.getElementsByClassName('board')[0] 
 var question = document.getElementsByClassName('question')[0] 
 var answersShown = document.getElementsByClassName('answer')
-
+var submit = document.getElementById('submit')
 // insert question + answers into board
 
 function makeQuestions() {
@@ -81,9 +81,16 @@ function makeQuestions() {
         board.appendChild(container) 
     } 
 }
-
+// list of div questions (10)
+divList = document.getElementsByClassName('triviaQuestion')
+// get results
 function results() {
-
+    for (var i = 0; i < divList.length; i++) {
+        if (divList[i].checked === arrayQs[1].correct) {
+            console.log("hello")
+        }
+    }
 }
+submit.addEventListener('click', results)
 
 makeQuestions()
