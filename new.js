@@ -57,7 +57,7 @@ var arrayQs = [
 var board = document.getElementsByClassName('board')[0] 
 var question = document.getElementsByClassName('question')[0] 
 var answersShown = document.getElementsByClassName('answer')
-var submit = document.getElementById('submit')
+var restart = document.getElementById('restart')
 // insert question + answers into board
 
 function makeQuestions() {
@@ -111,7 +111,7 @@ function results() {
     // clear board, show results
         console.log("hello")
 }
-submit.addEventListener('click', results)
+restart.addEventListener('click', results)
 
 makeQuestions()
 

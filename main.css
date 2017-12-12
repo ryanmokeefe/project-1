@@ -1,17 +1,24 @@
 body {
-    background-image: url(texture.jpg);
+    background-image: url(paper.jpg);
     text-align: center;
     letter-spacing: 1px;
     font-family: 'Titillium Web', sans-serif;
-/* font for results:
+/* font for correct results:
     font-family: 'Indie Flower', cursive;
-     */
+font for failure results:
+    font-family: 'Bungee', cursive; 
+
+    */
 }
 .body {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     margin: 0;
     padding: 20px;
-    background-color: rgba(88, 189, 182, .6);
+    /* background-color: rgba(255, 255, 255, .2); */
+    background-color:  rgba(210, 180, 140, .4);
     box-sizing: border-box;
     overflow: auto;
     background-size: cover;
@@ -23,39 +30,32 @@ body {
     margin: 50px auto;
     text-align: left;
 }
-.button {
-    border: 3px solid thistle;
-    width: 20px;
-    height: 20px;
-    border-radius: 10px;
-}
-.submit {
-    height: 50px;
-    width: 100px;
+.restart {
+    height: 80px;
+    width: 200px;
     color: white;
-    font-size: 16px;
+    font-size: 24px;
     letter-spacing: 1px;
-    background-color: rgb(126, 103, 63);
+    background-color: rgb(153, 130, 92);
     border: 3px solid rgb(80, 80, 80);
-    border-radius: 10px;
-    margin: 10px;
+    margin: 10px auto;
 }
 .triviaQuestion {
     background-color: rgb(38, 56, 83);
     width: 80%;
-    height: 250px;
-    border: 2px solid tan;
+    height: 275px;
+    border: 3px solid rgba(184, 154, 106, 0.7);
     color: white;
     margin: 10px auto;
     padding: 20px;
     
 }
 header {
-    font-family: 'Anton', sans-serif;
-    color: rgb(38, 56, 83);
-    text-shadow: white;
+    font-family: 'Archivo Black', sans-serif;
+    color: white;
+    text-shadow: 3px 3px rgb(38, 56, 83);
     font-size: 20px;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
 }
 h2 {
     text-align: center;   
@@ -67,20 +67,20 @@ input {
     margin: 10px;
 
 }
-.testResponse {
+button {
     display: block;
     height: 50px;
     width: 20%;
     padding: 0;
     margin: 25px auto;
-    background-color: white;
+    background-color: rgba(255, 255, 255, .3);
     font-size: 18px;
-    margin: 10px auto;
+    margin: 15px auto;
     border: 2px solid tan;
     border-radius: 10px;
-    color: rgb(38, 56, 83);
+    color: white;
+    text-shadow: 2px 2px rgb(38, 56, 83);    
     font-weight: 900;
     letter-spacing: 1px;
-    
 }
 
