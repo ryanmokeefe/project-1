@@ -59,30 +59,26 @@ var question = document.getElementsByClassName('question')[0]
 var answersShown = document.getElementsByClassName('answer')
 
 // insert question + answers into board
-var output
+
 function makeQuestions() {
     for (var i = 0; i < arrayQs.length; i++) {
         // create div to hold question
         var container = document.createElement('div')
         // add class to div
         container.setAttribute('class', ' triviaQuestion')
-        var currentQ = arrayQs[i].question
+        var currentQ = '<h2>' + arrayQs[i].question + '</h2>'
         // add current Question to container
         container.innerHTML = currentQ
         // add choices to container        
         for (var x = 0; x < arrayQs[i].answers.length; x++) {
-            var choicesShown = document.createElement("div")
+            // array for radio input + choices
             var choiceAndRadio = []
-            choiceAndRadio.push('<input type="radio" name="choice' + i + '"  value="Choice">' + arrayQs[i].answers[x])
-
-            choicesShown.innerHTML += choiceAndRadio
-            
-                 // arrayQs[i].answers[x]
-            container.appendChild(choicesShown)
+            choiceAndRadio.push('</br><input type="radio" name="choice' + i + '"  value="' + arrayQs[i].answers[x] + '">' + arrayQs[i].answers[x])
+           // add choices to container HTML
+            container.innerHTML += choiceAndRadio
         }
         // append container to board
-        board.appendChild(container)
-        // create divs to hold answers  
+        board.appendChild(container) 
     } 
 }
 
@@ -90,4 +86,4 @@ function results() {
 
 }
 
-arrayQs.map(makeQuestions)
+makeQuestions()

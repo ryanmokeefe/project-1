@@ -36,9 +36,19 @@ body {
 .triviaQuestion {
     background-color: rgb(38, 56, 83);
     width: 80%;
-    height: 100px;
+    height: 200px;
     border: 2px solid tan;
     color: white;
     margin: 10px auto;
     padding: 20px;
+    
+}
+h2 {
+    text-align: center;   
+    margin: 0 auto;
+    padding: 0 0 10px 0;
+    border-bottom: 1px solid grey; 
+}
+input {
+    margin: 10px;
 }
