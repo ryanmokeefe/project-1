@@ -1,14 +1,20 @@
 body {
     background-image: url(texture.jpg);
     text-align: center;
+    letter-spacing: 1px;
+    font-family: 'Titillium Web', sans-serif;
+/* font for results:
+    font-family: 'Indie Flower', cursive;
+     */
 }
 .body {
-    height: 1000px;
     width: 100%;
+    margin: 0;
+    padding: 20px;
     background-color: rgba(88, 189, 182, .6);
     box-sizing: border-box;
     overflow: auto;
-    object-fit: contain;
+    background-size: cover;
 }
 .board {
     /* background-color: rgba(88, 189, 182, .6); */
@@ -32,16 +38,24 @@ body {
     background-color: rgb(126, 103, 63);
     border: 3px solid rgb(80, 80, 80);
     border-radius: 10px;
+    margin: 10px;
 }
 .triviaQuestion {
     background-color: rgb(38, 56, 83);
     width: 80%;
-    height: 200px;
+    height: 250px;
     border: 2px solid tan;
     color: white;
     margin: 10px auto;
     padding: 20px;
     
+}
+header {
+    font-family: 'Anton', sans-serif;
+    color: rgb(38, 56, 83);
+    text-shadow: white;
+    font-size: 20px;
+    letter-spacing: 2px;
 }
 h2 {
     text-align: center;   
@@ -51,4 +65,22 @@ h2 {
 }
 input {
     margin: 10px;
+
 }
+.testResponse {
+    display: block;
+    height: 50px;
+    width: 20%;
+    padding: 0;
+    margin: 25px auto;
+    background-color: white;
+    font-size: 18px;
+    margin: 10px auto;
+    border: 2px solid tan;
+    border-radius: 10px;
+    color: rgb(38, 56, 83);
+    font-weight: 900;
+    letter-spacing: 1px;
+    
+}
+

@@ -73,24 +73,47 @@ function makeQuestions() {
         for (var x = 0; x < arrayQs[i].answers.length; x++) {
             // array for radio input + choices
             var choiceAndRadio = []
-            choiceAndRadio.push('</br><input type="radio" name="choice' + i + '"  value="' + arrayQs[i].answers[x] + '">' + arrayQs[i].answers[x])
+            choiceAndRadio.push('</br><input type="radio" name="choice' + i + '"  value=" class="testButton"' + arrayQs[i].answers[x] + '">' + arrayQs[i].answers[x])
            // add choices to container HTML
             container.innerHTML += choiceAndRadio
         }
+        // button to submit response
+
+        var testResponse = document.createElement('button')
+        testResponse.setAttribute("class", " testResponse"+ " testResponse" + i)
+        var text = document.createTextNode("Submit")
+        testResponse.appendChild(text)
+        container.appendChild(testResponse)
+
+        // Add event listener to each submit button 
+              testResponse.addEventListener('click', runTest)
         // append container to board
         board.appendChild(container) 
     } 
 }
 // list of div questions (10)
 divList = document.getElementsByClassName('triviaQuestion')
-// get results
-function results() {
-    for (var i = 0; i < divList.length; i++) {
-        if (divList[i].checked === arrayQs[1].correct) {
-            console.log("hello")
+
+// test individual response
+function runTest() {
+    for(var c = 0; c < divList.length; c++) {
+        var checked = document.querySelector('input[class= "testButton"]:checked').value;
+        if (checked === arrayQs[c].correct) {
+            console.log('yay')
+        } else {
+            console.log('nope')
         }
     }
+}
+
+// get results
+function results() {
+    // clear board, show results
+        console.log("hello")
 }
 submit.addEventListener('click', results)
 
 makeQuestions()
+
+// temporary/remove later:
+    var checked = document.getElementsByClassName('testButton');
