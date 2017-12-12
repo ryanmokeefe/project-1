@@ -69,16 +69,12 @@ function makeQuestions() {
         var currentQ = arrayQs[i].question
         // add current Question to container
         container.innerHTML = currentQ
-        // add choices to container
-        var choicesShown = document.createElement("div")
-        
+        // add choices to container        
         for (var x = 0; x < arrayQs[i].answers.length; x++) {
             var choicesShown = document.createElement("div")
             var choiceAndRadio = []
-            choiceAndRadio.push('<input type="radio" name="choice" value="Choice">' + arrayQs[i].answers[x])
-            // var radio = document.createElement("input")
-            // radio.setAttribute("type", "radio")
-            // choice.appendChild(radio)
+            choiceAndRadio.push('<input type="radio" name="choice' + i + '"  value="Choice">' + arrayQs[i].answers[x])
+
             choicesShown.innerHTML += choiceAndRadio
             
                  // arrayQs[i].answers[x]
