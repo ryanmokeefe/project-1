@@ -71,22 +71,18 @@ function makeQuestions() {
         container.innerHTML = currentQ
         // add choices to container        
         for (var x = 0; x < arrayQs[i].answers.length; x++) {
-            // array for radio input + choices
-            var choiceAndRadio = []
-            choiceAndRadio.push('</br><input type="radio" name="choice' + i + '"  value=" class="testButton"' + arrayQs[i].answers[x] + '">' + arrayQs[i].answers[x])
-           // add choices to container HTML
-            container.innerHTML += choiceAndRadio
+            // divs for choices
+            var choiceAndRadio = document.createElement('div')
+            choiceAndRadio.setAttribute('class', 'choice')
+            choiceAndRadio.setAttribute('value', arrayQs[i].answers[x])
+            choiceAndRadio.innerHTML = arrayQs[i].answers[x]
+           // add choices to container
+           this.addEventListener('click', runTest)
+            container.appendChild(choiceAndRadio)
         }
-        // button to submit response
-
-        var testResponse = document.createElement('button')
-        testResponse.setAttribute("class", " testResponse"+ " testResponse" + i)
-        var text = document.createTextNode("Submit")
-        testResponse.appendChild(text)
-        container.appendChild(testResponse)
-
+        // var choice = document.getElementsByClassName('choice')
         // Add event listener to each submit button 
-              testResponse.addEventListener('click', runTest)
+            //   choice.addEventListener('click', runTest)
         // append container to board
         board.appendChild(container) 
     } 
@@ -96,15 +92,16 @@ divList = document.getElementsByClassName('triviaQuestion')
 
 // test individual response
 function runTest() {
-    for(var c = 0; c < divList.length; c++) {
-        var checked = document.querySelector('input[class= "testButton"]:checked').value;
-        if (checked === arrayQs[c].correct) {
-            console.log('yay')
-        } else {
-            console.log('nope')
+    var choices = document.getElementsByClassName('choice')
+    for (var i = 0; i < divList.length; i++) {   
+        
+            if (this.value === arrayQs[i].correct) {
+                console.log('yay')
+            } else {
+                console.log('nope')
+            // }
         }
-    }
-}
+}}
 
 // get results
 function results() {
@@ -116,4 +113,4 @@ restart.addEventListener('click', results)
 makeQuestions()
 
 // temporary/remove later:
-    var checked = document.getElementsByClassName('testButton');
+    var checked = document.querySelectorAll('input[name=choice0]');

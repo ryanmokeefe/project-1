@@ -4,7 +4,7 @@ var arrayQs = [
         question: "1 + 1",
         answers: ["3", "2", "4", "5"],
         correct: "2"
-    }, 
+    },
     {
         question: "1 + 2",
         answers: ["3", "2", "4", "5"],
@@ -14,7 +14,7 @@ var arrayQs = [
         question: "1 + 3",
         answers: ["3", "2", "4", "5"],
         correct: "4"
-    }, 
+    },
     {
         question: "1 + 4",
         answers: ["3", "2", "4", "5"],
@@ -53,41 +53,77 @@ var arrayQs = [
 ]
 
 // html containers
-
+var score = 0;
 var board = document.getElementsByClassName('board')[0] 
 var question = document.getElementsByClassName('question')[0] 
 var answersShown = document.getElementsByClassName('answer')
-
+var restart = document.getElementById('restart')
 // insert question + answers into board
-var output
+
 function makeQuestions() {
     for (var i = 0; i < arrayQs.length; i++) {
         // create div to hold question
         var container = document.createElement('div')
         // add class to div
         container.setAttribute('class', ' triviaQuestion')
-        var currentQ = arrayQs[i].question
+        var currentQ = '<h2>' + arrayQs[i].question + '</h2>'
         // add current Question to container
         container.innerHTML = currentQ
-        // add choices to container
+        // add choices to container        
         for (var x = 0; x < arrayQs[i].answers.length; x++) {
-            var choicesShown = document.createElement("div")
+            // array for radio input + choices
             var choiceAndRadio = []
+            choiceAndRadio.push('</br><input type="radio" name="choice' + i + '" class="testButton ') 
+            if (arrayQs[i].answers[x] === arrayQs[i].correct) {
+                choiceAndRadio.push(' correct')
+            }
+            choiceAndRadio.push('"  value="' + arrayQs[i].answers[x] + '">' + arrayQs[i].answers[x])
 
-            // var radio = document.createElement("input")
-            // radio.setAttribute("type", "radio")
-            // choice.appendChild(radio)
-            choicesShown.innerHTML = arrayQs[i].answers[x]
-            container.appendChild(choicesShown)
+           // add choices to container HTML
+            container.innerHTML += choiceAndRadio.join(" ")
         }
+        // button to submit response
+
+        var testResponse = document.createElement('button')
+        testResponse.setAttribute("class", " testResponse"+ " testResponse" + i)
+        var text = document.createTextNode("Submit")
+        testResponse.appendChild(text)
+        container.appendChild(testResponse)
+
+        // Add event listener to each submit button 
+              testResponse.addEventListener('click', runTest)
         // append container to board
-        board.appendChild(container)
-        // create divs to hold answers  
-    } 
+        board.appendChild(container) 
+    }
 }
-
-function results() {
-
+// list of div questions (10)
+var scoreBoard = document.querySelector('#score')
+// test individual question response
+function runTest() {
+    var rightAnswer = document.querySelector('.correct');        if (rightAnswer.checked) {
+            console.log(this.parentElement);
+            this.parentElement.classList.add('rightAnswer');this.parentElement.textContent = "";
+            score += 10;
+            scoreBoard.innerHTML = score;
+            console.log('yay')
+        } else {
+            this.parentElement.classList.add('wrongAnswer');this.parentElement.textContent = "";
+            console.log('nope')
+        }
 }
+// reset
+function clear() {
+    // clear board, show results
+    board.innerHTML = ""
+    scoreBoard.innerHTML = 0
+    makeQuestions()
+    console.log("hello")
+}
+restart.addEventListener('click', clear)
 
-arrayQs.map(makeQuestions)
+makeQuestions()
+
+// temporary/remove later:
+    var checked = document.querySelectorAll('input[name=choice1]');
+
+    
