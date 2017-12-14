@@ -94,14 +94,23 @@ button {
 }
 .rightAnswer {
     background-image: url('correct.jpg');
+    background-position: center top;   
+    background-repeat: no-repeat;    
     background-size: cover;
+    background-color: white;
+    
 }
+/* FIX: background resizing */
 .wrongAnswer {
     background-image: url('wrong.jpg');
-    background-size: cover;
+    background-position: center top;    
+    background-repeat: no-repeat;
+    background-size: cover;    
     background-position-x: -50px;
+    background-color: white;
 }
 .testResponse {
+
     margin: 40px auto 0;
 }
 #score {
