@@ -106,7 +106,6 @@ button {
     background-position: center top;    
     background-repeat: no-repeat;
     background-size: cover;    
-    background-position-x: -50px;
     background-color: white;
 }
 .testResponse {

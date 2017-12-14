@@ -101,7 +101,8 @@ var scoreBoard = document.querySelector('#score')
 // test individual question response
 function runTest() {
     // FIX: .correct selecting first on page, instead of current Element
-    var rightAnswer = document.querySelector('.correct');        if (rightAnswer.checked) {
+    var rightAnswer = document.querySelector('.correct');
+    if (rightAnswer.checked) {
             console.log(this.parentElement);
             this.parentElement.classList.add('rightAnswer');this.parentElement.textContent = "";
             score += 10;
