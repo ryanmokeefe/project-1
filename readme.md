@@ -4,11 +4,13 @@
 
 ### The rules are simple: There are 10 questions, see how many you can get right!
 
-###### Integer Interogation will become a more intriguing game as the developer's skills increase. Stay tuned!
+###### Integer Interrogation will become a more intriguing game as the developer's skills increase. Stay tuned!
 
 ## How it was built: 
 
 ### The Questions:
+
+  <!--  -->
 
   An `Array` is used to store the question `Objects`, which each contain 3 key/value pairs: the question, an `Array` of choices, and the correct answer.
   A `Function` with a nested `For Loop` creates a container for each question using `document.createElement()`, and set it's class with `.setAttribute`. Each question is then pushed to an `Array`, as an `HTML String`. The HTML string is added to the container using `.innerTHML`.
@@ -20,7 +22,7 @@
   
 ### The Answers: 
   
-  When the user makes a selection and submits, A `Function` is used to check the class of the radio button selection in order to see if the selction has the class name 'correct'. 
+  When the user makes a selection and submits, A `Function` is used to check the class of the radio button selection in order to see if the selection has the class name 'correct'. 
   If it is the correct answer, the function adds a class of 'rightAnswer' to the current container element, and a score counter in the Javascript and on the page is increased by 10. 
   If the answer is incorrect, the function adds a class of 'wrongAnswer' to the current container element. 
  
@@ -29,13 +31,17 @@
   
   Need to refactor more.
   
-  User needs to complete questions in order. If answered out of order, the script will find the .correct of the skipped element and mark the submission as incorrect. The use of `querySelector` will return the first element with class .correct, and if a user has skipped a question, it will return the unaswered choice and view it as not selected. 
-  Code: 
-  ``` function runTest() {
-          var rightAnswer = document.querySelector('.correct');        
-            if (rightAnswer.checked) {
-            console.log(this.parentElement);
-            this.parentElement.classList.add('rightAnswer');this.parentElement.textContent = "";
-            score += 10;
-            scoreBoard.innerHTML = score;
-            console.log('yay') ```
+  User needs to complete questions in order. If answered out of order, the script will find the .correct of the skipped element and mark the submission as incorrect. The use of `querySelector` will return the first element with class `.correct`, and if a user has skipped a question, it will return the unanswered choice and view it as not selected. 
+
+   <!-- format like so  -->
+  ```js 
+  function runTest() {
+    var rightAnswer = document.querySelector('.correct');        
+    if (rightAnswer.checked) {
+      console.log(this.parentElement);
+      this.parentElement.classList.add('rightAnswer');
+      this.parentElement.textContent = "";
+      score += 10;
+      scoreBoard.innerHTML = score;
+      console.log('yay') 
+  ```
