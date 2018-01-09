@@ -5,6 +5,23 @@ console.log("hello world")
 // will let you tab-complete your references, so that you dont have to keep typing out the same long-named references every time while still 
 // having the convenience of very clearly labeled references
 
+
+// Object Oriented refactor below...
+
+// class Question {
+//   constructor (question, answers, answer) {
+//     this.question = question
+//     this.answers = answers
+//     this.answer = answer
+//   }
+// }
+
+//var questions = [
+//  new Question("What is 1 + 1?", ["3", "2", "4", "5"], "2"),
+//  new Question("What is 1 + 2?", ["3", "2", "4", "5"], "3"),
+//  new Question("What is 1 + 3?", ["3", "2", "4", "5"], "4")
+//]
+
 var arrayQs = [
   {
     question: "What is 1 + 1?",
