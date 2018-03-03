@@ -1,70 +1,69 @@
 body {
-    background-image: url(paper.jpg);
+    /* background-image: url(paper.jpg); */
     text-align: center;
     letter-spacing: 1px;
     font-family: 'Titillium Web', sans-serif;
-/* font for correct results:
-    font-family: 'Indie Flower', cursive;
-font for failure results:
-    font-family: 'Bungee', cursive; 
-
-    */
 }
 .body {
     position: absolute;
-    top: 0;
+    top: -30px;
     left: 0;
     width: 100%;
     margin: 0;
-    padding: 20px;
-    /* background-color: rgba(255, 255, 255, .2); */
-    background-color:  rgba(121, 104, 82, 0.4);
+    padding: 0;
+    background-color: white;
+    color: #262228;
     box-sizing: border-box;
     overflow: auto;
     background-size: cover;
 }
 .board {
-    /* background-color: rgba(88, 189, 182, .6); */
     object-fit: contain;
     width: 90%;
     margin: 50px auto;
+    padding: 0 50px;
     text-align: left;
 }
 .restart {
     height: 80px;
     width: 200px;
-    color: white;
     font-size: 24px;
     letter-spacing: 1px;
-    background-color: rgb(153, 130, 92);
-    border: 3px solid rgb(80, 80, 80);
+    border: 1px solid #262228;
+    color: #262228;
     margin: 10px auto;
 }
 .triviaQuestion {
-    background-color: rgb(38, 56, 83);
+    background-color: #0375b4;
     width: 80%;
     height: 300px;
-    border: 3px solid rgba(184, 154, 106, 0.7);
     color: white;
+    border-radius: 5px;
     margin: 10px auto;
-    padding: 20px;
+    padding: 0;
     
 }
 header {
     font-family: 'Archivo Black', sans-serif;
-    color: white;
-    text-shadow: 3px 3px rgb(38, 56, 83);
+    margin: 0;
+    padding: 20px 0 10px 0;
+    background-color: #FFCE00;
+    color: #262228;
     font-size: 20px;
     letter-spacing: 3px;
 }
 h2 {
     text-align: center;   
     margin: 0 auto;
-    padding: 0 0 10px 0;
+    padding: 10px 0 10px 0;
     border-bottom: 1px solid grey; 
+    border-radius: 5px;
+    background-color: #262228;
+    color: white;
+
 }
 input {
-    margin: 10px;
+    margin: 10px 50px;
 
 }
 button {
@@ -73,13 +72,12 @@ button {
     width: 20%;
     padding: 0;
     margin: 25px auto;
-    background-color: rgba(255, 255, 255, .3);
+    background-color: #FFCE00;
     font-size: 18px;
     margin: 15px auto;
-    border: 2px solid tan;
+    border: 1px solid white;
     border-radius: 10px;
-    color: white;
-    text-shadow: 2px 2px rgb(38, 56, 83);    
+    color: #0375B4;
     font-weight: 900;
     letter-spacing: 1px;
 }
@@ -96,7 +94,7 @@ button {
     background-image: url('correct.jpg');
     background-position: center top;   
     background-repeat: no-repeat;    
-    background-size: cover;
+    background-size: contain;
     background-color: white;
     
 }
@@ -105,7 +103,7 @@ button {
     background-image: url('wrong.jpg');
     background-position: center top;    
     background-repeat: no-repeat;
-    background-size: cover;    
+    background-size: contain;    
     background-color: white;
 }
 .testResponse {
