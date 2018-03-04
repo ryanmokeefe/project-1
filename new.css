@@ -1,5 +1,4 @@
 body {
-    /* background-image: url(paper.jpg); */
     text-align: center;
     letter-spacing: 1px;
     font-family: 'Titillium Web', sans-serif;
@@ -36,11 +35,11 @@ body {
 .triviaQuestion {
     background-color: #0375b4;
     width: 80%;
-    height: 300px;
+    min-height: 300px;
     color: white;
     border-radius: 5px;
     margin: 10px auto;
-    padding: 0;
+    padding: 0 0 15px 0;
     
 }
 header {
@@ -60,11 +59,10 @@ h2 {
     border-radius: 5px;
     background-color: #262228;
     color: white;
-
+    font-weight: 400;
 }
 input {
     margin: 10px 50px;
-
 }
 button {
     display: block;
@@ -81,12 +79,7 @@ button {
     font-weight: 900;
     letter-spacing: 1px;
 }
-/* .choice:hover {
-    background-color: grey;
-}
-.choice:click {
-    background-color: thistle;
-} */
+
 .answer {
     display: none;
 }
@@ -98,7 +91,6 @@ button {
     background-color: white;
     
 }
-/* FIX: background resizing */
 .wrongAnswer {
     background-image: url('wrong.jpg');
     background-position: center top;    

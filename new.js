@@ -1,54 +1,53 @@
-console.log("hello world")
 var arrayQs = [
     {
-        question: "What is 1 + 1?",
-        answers: ["3", "2", "4", "5"],
-        correct: "2"
+        question: "And so it goes..",
+        answers: ["Player Piano", "Galapagos", "Timequake", "Slaughterhouse Five"],
+        correct: "Slaughterhouse Five"
     },
     {
-        question: "What is 1 + 2?",
-        answers: ["3", "2", "4", "5"],
-        correct: "3"
+        question: "Beware of the man who works hard to learn something, learns it, and finds himself no wiser than before.",
+        answers: ["Breakfast of Champions", "Cat's Cradle", "Timequake", "Bluebeard"],
+        correct: "Cat's Cradle"
     },
     {
-        question: "What is 1 + 3?",
-        answers: ["3", "2", "4", "5"],
-        correct: "4"
+        question: "We are what we pretend to be, so we must be careful about what we pretend to be.",
+        answers: ["Slaughterhouse Five", "Mother Night", "Sirens of Titan", "Galapagos"],
+        correct: "Mother Night"
     },
     {
-        question: "What is 1 + 4?",
-        answers: ["3", "2", "4", "5"],
-        correct: "5"
+        question: "I was a victim of a series of accidents, as are we all.",
+        answers: ["Slaughterhouse Five", "Bluebeard", "Sirens of Titan", "Cat's Cradle"],
+        correct: "Sirens of Titan"
     },
     {
-        question: "What is 1 + 5?",
-        answers: ["6", "2", "4", "5"],
-        correct: "6"
+        question: "I have this disease late at night sometimes, involving alcohol and the telephone.",
+        answers: ["Breakfast of Champions", "Bluebeard", "Slapstick", "Slaughterhouse Five"],
+        correct: "Slaughterhouse Five"
     },
     {
-        question: "What is 1 + 6?",
-        answers: ["7", "2", "4", "5"],
-        correct: "7"
+        question: "There are plenty of good reasons for fighting...but no good reason to ever hate without reservation, to imagine that God Almighty hates with you, too. ",
+        answers: ["Welcome to the Monkey House", "Slaughterhouse Five", "Mother Night", "Sirens of Titan"],
+        correct: "Mother Night"
     },
     {
-        question: "What is 1 + 7?",
-        answers: ["8", "2", "4", "5"],
-        correct: "8"
+        question: "A step backward, after making a wrong turn, is a step in the right direction.",
+        answers: ["Cat's Cradle", "Player Piano", "Galapagos", "Timequake"],
+        correct: "Player Piano"
     },
     {
-        question: "What is 1 + 8?",
-        answers: ["9", "2", "4", "5"],
-        correct: "9"
+        question: "We are healthy only to the extent that our ideas are humane.",
+        answers: ["Breakfast of Champions", "Sirens of Titan", "Mother Night", "Welcome to the Monkey House"],
+        correct: "Breakfast of Champions"
     },
     {
-        question: "What is 1 + 9?",
-        answers: ["10", "2", "4", "5"],
-        correct: "10"
+        question: "Science is magic that works.",
+        answers: ["Mother Night", "Breakfast of Champions", "Player Piano", "Cat's Cradle"],
+        correct: "Cat's Cradle"
     },
     {
-        question: "What is 1 + 10?",
-        answers: ["11", "2", "4", "5"],
-        correct: "11"
+        question: "All this happened, more or less.",
+        answers: ["Timequake", "Galapagos", "Player Piano", "Slaughterhouse Five"],
+        correct: "Slaughterhouse Five"
     }
 ]
 
@@ -59,7 +58,6 @@ var question = document.getElementsByClassName('question')[0]
 var answersShown = document.getElementsByClassName('answer')
 var restart = document.getElementById('restart')
 // insert question + answers into board
-// FIX: refactor:
 function makeQuestions() {
     for (var i = 0; i < arrayQs.length; i++) {
         // create div to hold question
@@ -78,18 +76,15 @@ function makeQuestions() {
                 choiceAndRadio.push(' correct')
             }
             choiceAndRadio.push('"  value="' + arrayQs[i].answers[x] + '">' + arrayQs[i].answers[x])
-
            // add choices to container HTML
             container.innerHTML += choiceAndRadio.join(" ")
         }
         // button to submit response
-
         var testResponse = document.createElement('button')
         testResponse.setAttribute("class", " testResponse"+ " testResponse" + i)
         var text = document.createTextNode("Submit")
         testResponse.appendChild(text)
         container.appendChild(testResponse)
-
         // Add event listener to each submit button 
               testResponse.addEventListener('click', runTest)
         // append container to board
@@ -100,17 +95,13 @@ function makeQuestions() {
 var scoreBoard = document.querySelector('#score')
 // test individual question response
 function runTest() {
-    // FIX: .correct selecting first on page, instead of current Element
     var rightAnswer = document.querySelector('.correct');
     if (rightAnswer.checked) {
-            console.log(this.parentElement);
             this.parentElement.classList.add('rightAnswer');this.parentElement.textContent = "";
             score += 10;
             scoreBoard.innerHTML = score;
-            console.log('yay')
         } else {
             this.parentElement.classList.add('wrongAnswer');this.parentElement.textContent = "";
-            console.log('nope')
         }
 }
 // reset
@@ -119,11 +110,7 @@ function clear() {
     board.innerHTML = ""
     scoreBoard.innerHTML = 0
     makeQuestions()
-    console.log("hello")
 }
 restart.addEventListener('click', clear)
 
 makeQuestions()
-
-// temporary/remove later:
-    var checked = document.querySelectorAll('input[name=choice1]');
