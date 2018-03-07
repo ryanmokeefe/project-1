@@ -2,9 +2,9 @@
 
 ![alt text](https://github.com/ryanmokeefe/project-1/blob/master/screenshot.png "screenshot")
 
-### The rules are simple: There are 10 questions, see how many you can get right!
+### The rules are simple: See if you can guess what novel each quote is from, see how many you can get right!
 
-###### Integer Interogation will become a more intriguing game as the developer's skills increase. Stay tuned!
+###### Literature Trivia will become a more intriguing game as the developer's skills increase. Stay tuned!
 
 ## How it was built: 
 
@@ -27,7 +27,7 @@
  ## Known Bugs: 
   Need to adjust Background of rightAnswer and wrongAnswer.
   
-  Need to refactor more.
+  Need to refactor.
   
   User needs to complete questions in order. If answered out of order, the script will find the .correct of the skipped element and mark the submission as incorrect. The use of `querySelector` will return the first element with class .correct, and if a user has skipped a question, it will return the unaswered choice and view it as not selected. 
   Code: 
